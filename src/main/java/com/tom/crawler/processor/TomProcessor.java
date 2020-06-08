@@ -14,11 +14,11 @@ import us.codecraft.webmagic.processor.PageProcessor;
 public class TomProcessor implements PageProcessor {
 
     //添加日志
-    private Logger logger = LoggerFactory.getLogger(this.getClass());
+    private static final Logger logger = LoggerFactory.getLogger(TomProcessor.class);
 
 
     //设置请求头，重试次数，超时时间
-    private Site site = Site.me()
+    private final Site site = Site.me()
             .setRetryTimes(3)
             .setSleepTime(100)
             .setTimeOut(30000)
@@ -28,8 +28,7 @@ public class TomProcessor implements PageProcessor {
     public void process(Page page) {
         //输出一下site的值
         logger.info("site info:{}", site.getUserAgent());
-
-
+        page.addTargetRequests(page.getHtml().links().all());
     }
 
     public Site getSite() {
