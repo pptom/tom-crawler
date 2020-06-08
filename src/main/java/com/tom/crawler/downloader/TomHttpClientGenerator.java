@@ -31,11 +31,11 @@ import java.security.cert.X509Certificate;
 import java.util.Map;
 
 /**
- * @author tom.tang
- * @date 2018/7/6
- * @email tom.tang@sainstore.com
- * @description
- * @since 2018/7/6
+ * @author pptom
+ * @date 2020/6/8
+ * @email 424222352@qq.com
+ * @description Implement bloom filter on redis bitset.
+ * @since 2020/6/8
  */
 public class TomHttpClientGenerator {
     private final Logger logger = LoggerFactory.getLogger(TomHttpClientGenerator.class);
