@@ -1,17 +1,18 @@
 # tom-crawler
-**spring整合webmagic，mybatis，dungproxy**,你也可以自行整合spring mvc  
+**基于Spring Boot 2.0 整合了 WebMagic爬虫框架**
 
 ---
-**webmaigc**：官方网站[http://webmagic.io](http://webmagic.io)
+**WebMagic**：官方网站[http://webmagic.io](http://webmagic.io)
 > webmagic是一个开源的Java垂直爬虫框架，目标是简化爬虫的开发流程，让开发者专注于逻辑功能的开发。webmagic的核心非常简单，但是覆盖爬虫的整个流程，也是很好的学习爬虫开发的材料。
 
-**DungProxy项目主页**
-- oshina http://git.oschina.net/virjar/proxyipcenter
-- github https://github.com/virjar/dungproxy
-> DungProxy是一个代理IP服务,他包括一个代理IP资源server端和一系列适配中心IP资源得客户端。server负责代理IP资源的收集维护。client则是一系列方便用户使用得API,他屏蔽了代理IP下载、代理IP选取、IP绑定、IP切换等比较复杂逻辑。用户只需要引入client即可方便使用代理IP服务
-
+**基于redis的布隆过滤器** 
+- 布隆过滤器可用于重复Url的过滤，能快速检查一个元素是否存在一个集合中。
+- 结合redis可以实现将布隆过滤器存放到redis中，可实现重启服务不丢失抓取URL队列
+- 具体实现参考该项目https://github.com/wxisme/bloomfilter
 ---
 # tom-crawler的主要特色：
 - 使用spring来管理整个项目的bean
-- 只需实现DungProxyDownloader即可使用DungProxy，自动切换IP，绕过反爬虫检测
-- 整合mybatis，方便将爬取的数据存进数据库
+- 整合Spring Boot可以快速部署
+- 支持亿级的URL快速去重
+- 支持httpClient连接池
+- TODO 整合代理配置
