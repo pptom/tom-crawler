@@ -11,6 +11,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Request;
 import us.codecraft.webmagic.Site;
@@ -33,6 +34,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Contract(threading = ThreadingBehavior.SAFE)
+@Component
 public class CrawlerDownloader extends AbstractDownloader {
 
     private final Logger logger = LoggerFactory.getLogger(CrawlerDownloader.class);
